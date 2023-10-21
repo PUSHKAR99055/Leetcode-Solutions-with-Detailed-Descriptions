@@ -1,0 +1,8 @@
+Intuition
+There are 3 possible column we can start from i.e. Red, Green and Blue
+We want to traverese the different columns from and the sub problem will be the next possible columns we can go to.
+
+Approach
+So starting from (0,0), (0,1), (0,2) we start searching minimum from our next possible options. 
+Adding all the intermediate rows results and returning it. 
+Now taking the minimum of all the starting traversals is the result and what we would return as our final answer.
