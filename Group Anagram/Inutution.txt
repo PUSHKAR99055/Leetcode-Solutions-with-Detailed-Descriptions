@@ -1,0 +1,4 @@
+Intuition
+We have to iterate to get the characters count in each string instead of using dictionary to store the count we can use list as the number 
+of alphabets is known to us i.e. 26. 
+Then will simply append all string having same list key casted to tuple and return it.
