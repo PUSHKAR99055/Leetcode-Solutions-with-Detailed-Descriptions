@@ -1,0 +1,14 @@
+The curr dictionary is initialized to store the counts of each of the required characters ('b', 'a', 'l', 'o', 'n'). 
+Initially, all counts are set to 0.
+
+A for loop iterates through each character in the text string.
+
+Inside the loop, it checks if the current character i is one of the required characters ('b', 'a', 'l', 'o', 'n'). 
+If it is, it increments the corresponding count in the curr dictionary.
+
+The string s is set to 'balloon'. This is the word we want to count in the input string.
+
+The method returns the minimum count among the counts of 'b', 'a', 'n', 'l' (divided by 2 because there are two 'l's in "balloon"), 
+and 'o' (divided by 2 because there are two 'o's in "balloon"). 
+
+This accounts for the fact that you need two 'l's and two 'o's to form a single instance of "balloon."
