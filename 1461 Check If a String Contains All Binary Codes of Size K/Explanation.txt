@@ -1,0 +1,5 @@
+Initialize a set called hash to store unique binary codes of length k.
+Iterate through the input string s, considering all possible substrings of length k.
+Check if the current substring of length k is already in the hash set. If not, add it to the set.
+After processing all possible substrings, compare the size of the hash set to 2^k.
+Return True if the sizes are equal, indicating that all possible binary codes of length k are present; otherwise, return False.
