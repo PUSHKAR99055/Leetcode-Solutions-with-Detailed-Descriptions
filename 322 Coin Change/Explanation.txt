@@ -1,0 +1,24 @@
+Initialize l (left) and r (right) to 0 and the length of the matrix minus 1, respectively. This defines the boundaries of the 
+current layer.
+
+Use a while loop to iterate while l is less than r. This loop continues until you have rotated all the layers.
+
+Within the loop, initialize top and bottom to l and r, respectively. These variables represent the top and bottom rows of 
+the current layer.
+
+Use a for loop to iterate through the elements within the current layer, from the left to the right of the layer (from l to r).
+
+Inside the loop, store the value of the top-left element of the current layer in a temporary variable top_left.
+
+Update the four corners of the current layer:
+
+Set the top-left element to the bottom-left element.
+Set the bottom-left element to the bottom-right element.
+Set the bottom-right element to the top-right element.
+Set the top-right element to the top_left (the value saved in step 5).
+Increment l to move to the next layer's left boundary and decrement r to move to the next layer's right boundary.
+
+Repeat steps 3-7 for the next layer until all layers have been rotated.
+
+By following these steps, the code rotates the matrix layer by layer, and at the end of the process, the matrix is rotated 90 degrees 
+clockwise in-place.
