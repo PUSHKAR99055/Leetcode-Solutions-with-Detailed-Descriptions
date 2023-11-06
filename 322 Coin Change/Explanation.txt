@@ -1,24 +1,21 @@
-Initialize l (left) and r (right) to 0 and the length of the matrix minus 1, respectively. This defines the boundaries of the 
-current layer.
+This code is a Python implementation of a solution to the Coin Change problem, which aims to find the minimum number of coins needed to make a specific amount of money using a given set of coin denominations. Here's how it works:
 
-Use a while loop to iterate while l is less than r. This loop continues until you have rotated all the layers.
+The function coinChange takes two arguments: coins (a list of coin denominations) and amount (the target amount we want to make change for).
 
-Within the loop, initialize top and bottom to l and r, respectively. These variables represent the top and bottom rows of 
-the current layer.
+The core logic of the solution is implemented within the dfs (depth-first search) function, which is decorated with memoization using @cache. This means it stores previously computed results to avoid redundant calculations.
 
-Use a for loop to iterate through the elements within the current layer, from the left to the right of the layer (from l to r).
+In the dfs function:
 
-Inside the loop, store the value of the top-left element of the current layer in a temporary variable top_left.
+If i (the current coin index) exceeds the length of the coins list or if the target becomes negative, it means that we can't make change with the provided coins, so the function returns positive infinity (inf).
 
-Update the four corners of the current layer:
+If the target becomes 0, it means we've successfully made change, and the function returns 0, indicating that no more coins are needed.
 
-Set the top-left element to the bottom-left element.
-Set the bottom-left element to the bottom-right element.
-Set the bottom-right element to the top-right element.
-Set the top-right element to the top_left (the value saved in step 5).
-Increment l to move to the next layer's left boundary and decrement r to move to the next layer's right boundary.
+The function considers two possibilities:
 
-Repeat steps 3-7 for the next layer until all layers have been rotated.
+Exclude the current coin by calling dfs(i+1, target). This represents the case where we don't use the current coin denomination.
+Include the current coin by calling dfs(i, target - coins[i]). This represents the case where we use the current coin denomination.
+The function returns the minimum of these two possibilities as the result.
 
-By following these steps, the code rotates the matrix layer by layer, and at the end of the process, the matrix is rotated 90 degrees 
-clockwise in-place.
+The ans variable is set to the result of dfs(0, amount), which represents the minimum number of coins needed to make change for the target amount using the provided coins.
+
+If it's not possible to make change (i.e., ans remains positive infinity), the code returns -1 to indicate that it's impossible to make the given amount using the provided coins.
