@@ -1,0 +1,21 @@
+The numIslands method takes a 2D grid as input, where '1' represents land, and '0' represents water. It returns the count of distinct islands.
+
+It initializes the result variable res to 0. This variable will be used to count the number of islands.
+
+It determines the number of rows and columns in the input grid using len(grid) and len(grid[0]) and stores them in ROWS and COLS variables, respectively.
+
+It initializes a set visit to keep track of visited cells to avoid redundant processing.
+
+The dfs (Depth-First Search) function is defined inside the numIslands method. It takes the coordinates of a cell (r, c) as its parameters and explores the island starting from that cell using a depth-first approach.
+
+Inside the dfs function:
+
+It defines the directions list, which represents the four possible moves (up, down, left, and right) from the current cell.
+It adds the current cell (r, c) to the visit set to mark it as visited.
+It iterates through each direction and calculates the new coordinates (row, col) based on the current cell's coordinates (r, c) and the direction (dr, dc).
+It checks if the new coordinates (row, col) are within the bounds of the grid, not visited before, and the cell contains '1' (land).
+If all conditions are met, it recursively calls the dfs function with the new coordinates (row, col) to explore the connected land cells.
+Outside the dfs function, a double loop iterates through all cells of the input grid using two nested for loops.
+
+If the current cell is '1' and has not been visited before, it means the start of a new island. The dfs function is called from this cell to explore the entire island, and res is incremented by 1 to count it as a distinct island.
+Finally, the method returns the value of res, which is the count of distinct islands in the input grid.
