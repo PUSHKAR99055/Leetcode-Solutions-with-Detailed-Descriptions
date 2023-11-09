@@ -1,0 +1,15 @@
+We observe that a set of courses has been assigned to us, along with certain dependencies between them, expressed as pairs. These pairs offer clues for modeling the problem as a graph.
+
+By considering each course as a node and establishing an edge from "bib_ib" to "aia_ia" for any prerequisite [aia_ia, bib_ib] (indicating that course "bib_ib" must be completed before taking course "aia_ia"), we create a directed graph.
+
+The presence of a cycle in this directed graph indicates potential difficulties in completing all courses. Conversely, the absence of a cycle allows us to conduct a topological sort of the graph, revealing the sequence in which all courses can be completed.
+
+Consequently, the problem boils down to determining the existence of a cycle in the graph. If a cycle is present, the answer is false; otherwise, it is true.
+
+A topological sort of a directed graph involves arranging its vertices in a linear order so that for every directed edge u -> v from vertex u to vertex v, u precedes v in the order.
+
+In the case of a directed acyclic graph, Kahn's algorithm proves useful for obtaining the topological ordering. This algorithm keeps track of the number of incoming edges into each node (indegree). It operates by iteratively visiting nodes with an indegree of zero, removing all associated edges, and decrementing the indegree of affected nodes. This process continues until no elements with zero indegree remain.
+
+For those unfamiliar with Kahn's algorithm, we recommend referring to our LeetCode Explore Card for detailed information.
+
+One notable advantage of employing Kahn's algorithm is its dual functionality in facilitating topological ordering and detecting graph cycles.
