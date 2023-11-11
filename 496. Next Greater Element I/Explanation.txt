@@ -1,0 +1,18 @@
+Stack for Tracking:
+
+The stack is used to keep track of elements in nums2 as we iterate through them.
+We are interested in finding the next greater element for each element in nums2, and the stack helps us maintain a decreasing order of elements.
+Iterative Comparison:
+
+Iterate through each element in nums2.
+For each element, compare it with the elements at the top of the stack.
+If the current element is greater than the element at the top of the stack, update the dictionary curr with the next greater element.
+Dictionary for Mapping:
+
+The dictionary curr is used to store the mapping of an element to its next greater element.
+After iterating through nums2, curr contains the information needed to find the next greater element for any element in nums2.
+Mapping for Result:
+
+Iterate through each element in nums1.
+Check if the element is in the curr dictionary.
+If it is, append the corresponding next greater element to the result list (ans); otherwise, append -1.
