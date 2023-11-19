@@ -1,21 +1,7 @@
-Initialize two pointers, l and r, to represent the left and right boundaries of the search range. Initially, l is set to 0, and r is set to the index of the last element in the nums array (i.e., len(nums) - 1).
-
-Create an empty list ans to store the result, and initialize a variable res to -1. res will be used to keep track of the index of the target element when found.
-
-Perform two binary searches:
-
-First Binary Search: This search finds the leftmost occurrence of the target element. The loop continues as long as l is less than or equal to r.
-
-Calculate the mid index as the midpoint between l and r.
-Check if the element at nums[mid] is equal to the target. If it is, update res with the current mid and move the r pointer to mid - 1 to search for the leftmost occurrence.
-If nums[mid] is greater than the target, move the r pointer to mid - 1.
-If nums[mid] is less than the target, move the l pointer to mid + 1.
-Second Binary Search: This search finds the rightmost occurrence of the target element. The loop is similar to the first binary search but with different pointer movements.
-
-Calculate the mid index as the midpoint between l and r.
-Check if the element at nums[mid] is equal to the target. If it is, update res with the current mid and move the l pointer to mid + 1 to search for the rightmost occurrence.
-If nums[mid] is greater than the target, move the l pointer to mid + 1.
-If nums[mid] is less than the target, move the r pointer to mid - 1.
-After both binary searches are complete, append the res value from the first search (leftmost occurrence) to the ans list and then append the res value from the second search (rightmost occurrence) to the ans list.
-
-Return the ans list, which contains the indices of the first and last occurrences of the target element in the nums array.
+Certainly! The code aims to efficiently find, for each query, the leftmost building that is taller than or equal to the 
+building at the query index. 
+It uses a stack to keep track of the buildings in decreasing order of height and pre-processes the heights array to quickly 
+find the next taller building for each building. 
+The algorithm handles different cases, such as when the query indices are equal, 
+when the height at the second index is greater than the height at the first index, or when there's no next taller building available. 
+The final result is a list of indices representing the leftmost taller or equally tall building for each query.
