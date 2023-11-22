@@ -1,0 +1,8 @@
+Intuition
+The array is sorted.
+If we want find the one number closest to x,
+we don't have to check one by one.
+it's straightforward to use binary research.
+
+Now we want the k closest,
+the logic should be similar.
