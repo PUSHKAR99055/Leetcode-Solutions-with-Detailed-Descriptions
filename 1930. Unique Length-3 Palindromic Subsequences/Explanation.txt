@@ -1,0 +1,9 @@
+Intuition
+
+There is only one possible form a palindrome with length 3 can take. The first and last character must be the same, and the character in the middle can be anything (including the same character as the first/last character).
+
+The important thing to notice here is that the first and last characters must be the same. To solve this problem, we can focus on each letter of the alphabet letter and treat it as the first and last character. Then, we find how many characters we can put in between them to form a palindrome.
+
+There may be many occurrences of a given letter in s. Which ones should we choose? We should choose the first occurrence of letter in s to be the first character in our palindrome, and the last occurrence of letter in s to be the last character in our palindrome. Why?
+
+The problem wants us to find subsequences - so when we look for a character to put as the middle character in the palindrome, this character must also be in between our two occurrences in s. Thus, by choosing the first and last occurrence, we are maximizing the number of characters in between, and thus maximizing the number of potential palindromes we could form.
