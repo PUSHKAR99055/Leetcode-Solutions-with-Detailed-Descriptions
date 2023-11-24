@@ -1,0 +1,13 @@
+All such problems usually could be solved by sliding window approach in a linear
+time. The challenge here is how to implement constant-time slice
+to fit into this linear time.
+
+If the patterns are not known in advance, i.e. it's "find duplicates" problem,
+one could use one of two ways to implement constant-time slice: Bitmasks or Rabin-Karp.
+Please check article Repeated DNA Sequences
+for the detailed comparison of these two algorithms.
+
+Here the situation is more simple: patterns are known in advance, and the set
+of characters in the patterns is very limited as well: 26 lowercase English letters.
+Hence one could allocate array or hashmap with 26 elements and use it as a
+letter counter in the sliding window.
